@@ -14,11 +14,21 @@ public class FavCity extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        resp.getWriter().println("<h1>Search Page<h1>");
+        String html= "<form method='Post'>";
+        html+="<label for='favcity'>Search</lable>";
+        html +="<input name='favcity' id='favcity' placeholder='Enter Favorite city'>";
+        html+="<br>";
+        html+="<button>Submit</button>";
+        html+="</form>";
+        resp.getWriter().println(html);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        String searchTerm = req.getParameter("favcity");
+        resp.sendRedirect("/favcity/results?favcity="+searchTerm);
+        System.out.println(searchTerm);
     }
 }
