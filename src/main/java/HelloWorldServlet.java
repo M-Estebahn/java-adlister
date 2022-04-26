@@ -8,7 +8,12 @@ import java.io.IOException;
 public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        res.getWriter().println("Hello World");
+        String name=req.getParameter("name");
+        if (name == null){
+            res.getWriter().println("<h1>Hello, World!</h1>");
+        }else {
+            res.getWriter().println("<h1>Hello, "+ name +"!</h1>");
+        }
     }
 }
 
