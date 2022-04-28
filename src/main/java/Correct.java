@@ -7,8 +7,8 @@ import java.io.IOException;
 public class Correct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("result",true);
-        request.getRequestDispatcher("/answer.jsp").forward(request,response);
+        request.setAttribute("result", true);
+        request.getRequestDispatcher("/answer.jsp").forward(request, response);
 
     }
 

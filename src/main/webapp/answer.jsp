@@ -17,7 +17,7 @@
     <h3>You are Correct!!</h3>
 </c:if>
 
-<c:if test ="${!result}">
+<c:if test="${!result}">
     <h3>You are Incorrect!!</h3>
 </c:if>
 
