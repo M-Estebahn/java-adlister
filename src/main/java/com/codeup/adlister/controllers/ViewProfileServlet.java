@@ -16,4 +16,9 @@ public class ViewProfileServlet extends HttpServlet {
         }
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("/ads");
+    }
 }
